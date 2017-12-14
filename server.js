@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
 
 app.get('/api/albums', controllers.api.index)
 
-
+app.post('/api/albums', controllers.api.create)
 
 
 
