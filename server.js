@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
     db = require('./models');
 app.use(express.static('public'));
-
+app.use(bodyParser.urlencoded({ extended: true }));
 var controllers = require('./controllers');
 app.get('/api', controllers.api.index);
 
