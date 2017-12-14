@@ -1,9 +1,11 @@
 var express = require('express');
   bodyParser = require('body-parser');
 var app = express();
-
+    db = require('./models');
 app.use(express.static('public'));
 
+var controllers = require('./controllers');
+app.get('/api', controllers.api.index);
 
 
 app.get('/', function(req, res) {
