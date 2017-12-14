@@ -7,11 +7,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var controllers = require('./controllers');
 app.get('/api', controllers.api.index);
 
-
 app.get('/', function(req, res) {
   res.sendFile('views/index.html', {root: __dirname});
   console.log(__dirname);
 })
+
+app.get('/api/albums', controllers.api.index)
 
 
 
