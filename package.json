@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/levatech007/tunely#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.7"
   }
 }
