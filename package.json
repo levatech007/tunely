@@ -1,0 +1,25 @@
+{
+  "name": "tunely",
+  "version": "1.0.0",
+  "description": "Full CRUD app with MongoDB, Mongoose, and Express.",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levatech007/tunely.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levatech007/tunely/issues"
+  },
+  "homepage": "https://github.com/levatech007/tunely#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
