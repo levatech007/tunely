@@ -19,18 +19,19 @@ $.ajax({
 });
 
 
-$('form').on('submit', function() {
-
+$('form').on('submit', function(e) {
+  e.preventDefault();
+  //console.log($("form").serialize());
   $.ajax({
     method: "POST",
     url: "/api/albums",
     data: $("form").serialize(),
-    success: function() {
-      console.log("Success!");
+    success: function(data) {
+      renderAlbum(data);
     },
     error: handleError
   });
-
+  $('input').val('');
 });
 
 function handleSuccess(albums) {
