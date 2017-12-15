@@ -1,7 +1,8 @@
+
+// module.exports = {
+//   api: require('./apiController')
+// }
 module.exports = {
-  api: require('./apiController')
-}
-module.exports = {
-  api: require('./albumsController'),
+  api: require('./apiController'),
   albums: require('./albumsController')
 }
