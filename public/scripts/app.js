@@ -4,7 +4,7 @@
  * into functions and objects as needed.
  *
  */
- 
+
 
 // hard-coded data
 var sampleAlbums = [{
@@ -55,6 +55,7 @@ $(document).ready(function() {
 });
 
 function handleSuccess (albums) {
+  console.log(albums);
   albums.forEach(function(album) {
     renderAlbum(album);
   });
@@ -68,7 +69,12 @@ function handleError(err){
 // this function takes a single album and renders it to the page
 function renderAlbum(album) {
 
-  // HTML template string for each album
+  let trackList = album.songs.map( function(song) {
+    let trackNumber = song.trackNumber
+    let trackName = song.name
+    return ` (${trackNumber}) ${trackName} `
+  });
+
   var albumHtml = `
     <!-- one album -->
     <div class="row album">
@@ -98,6 +104,10 @@ function renderAlbum(album) {
                   <li class="list-group-item">
                     <h4 class='inline-header'>Released date:</h4>
                     <span class='album-releaseDate'>${ album.releaseDate }</span>
+                  </li>
+                  <li class="list-group-item">
+                    <h4 class="inline-header">Songs:</h4>
+                    <span> ${trackList.join("-")} </span>
                   </li>
                 </ul>
               </div>
