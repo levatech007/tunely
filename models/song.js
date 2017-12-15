@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 // album schema
 var SongSchema = new Schema({
   name: String,
-  trackName: Number
+  trackNumber: Number
 });
 
 // album model
