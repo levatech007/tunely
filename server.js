@@ -1,7 +1,8 @@
 var express = require('express');
   bodyParser = require('body-parser');
 var app = express();
-    db = require('./models');
+var db = require('./models');
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 var controllers = require('./controllers');
@@ -12,9 +13,11 @@ app.get('/', function(req, res) {
   console.log(__dirname);
 })
 
-app.get('/api/albums', controllers.api.index)
 
-app.post('/api/albums', controllers.api.create)
+
+app.get('/api', controllers.api.index);
+app.get('/api/albums', controllers.albums.index);
+app.post('/api/albums', controllers.albums.create);
 
 
 
