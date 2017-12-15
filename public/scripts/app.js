@@ -48,14 +48,15 @@ function handleError(error) {
 // this function takes a single album and renders it to the page
 function renderAlbum(album) {
 
-  var albumDisplay = `<div class="row album">
-
+  var albumDisplay = `
+  
+  <div class= "row album">
           <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
               <div class="panel-body">
 
               <div class='row'><div class="col-md-3 col-xs-12 thumbnail album-art">
-                <img src="../public/images/800x800.png" alt="album image">
+                <img src="/images/800x800.png" alt="album image">
               </div>
 
               <div class="col-md-9 col-xs-12">
@@ -83,7 +84,8 @@ function renderAlbum(album) {
           </div>
         </div>
       </div>
-     </div>`
+    </div>`
+
 
   $('#albums').append(albumDisplay);
 };
