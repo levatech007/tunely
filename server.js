@@ -19,7 +19,7 @@ var controllers = require('./controllers');
  * ROUTES *
 **********/
 
-/* 
+/*
   HTML ENDPOINTS
 */
 
