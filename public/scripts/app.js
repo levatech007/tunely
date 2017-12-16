@@ -52,7 +52,7 @@ $(document).ready(function() {
     // reset form input values after formData has been captured
     $(this).trigger("reset");
   });
-});
+
 
 function handleSuccess (albums) {
   console.log(albums);
@@ -77,7 +77,7 @@ function renderAlbum(album) {
 
   var albumHtml = `
     <!-- one album -->
-    <div class="row album">
+    <div class="row album" data-album-id="${album._id}">
 
       <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
@@ -111,11 +111,13 @@ function renderAlbum(album) {
                   </li>
                 </ul>
               </div>
-
             </div>
             <!-- end of album internal row -->
 
             <div class='panel-footer'>
+            <button type="button" class="btn btn-primary add-song" data-toggle="modal" data-target="#songModal">
+              Add song
+            </button>
             </div>
 
           </div>
@@ -126,8 +128,15 @@ function renderAlbum(album) {
 
     </div>
     <!-- end one album -->
-  `;
+  `
 
   // render HTML template in the DOM
   $('#albums').prepend(albumHtml);
 }
+
+  $('#albums').on('click', '.add-song', function(e) {
+      console.log('add-song clicked!');
+      var id= $(this).closest('.album').data('album-id'); // "5665ff1678209c64e51b4e7b"
+      console.log('id',id);
+  });
+});
